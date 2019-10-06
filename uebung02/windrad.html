@@ -8,20 +8,132 @@
    <svg width="600" height="600">
        <!-- Background -->
        <rect x="0" y="0" width="600" height="500" fill="rgb(163, 192, 242)" />
-       <rect x="0" y="500" width="600" height="100" fill="rgb(169, 236, 119)" />
+       <rect x="0" y="500" width="600" height="100" fill="rgb(0, 157, 0)" />
 
        <!-- Windrad  -->
+
        <!-- Turm  -->
        <polygon points="285 505, 295 225, 305 225, 315 505, z" fill="rgb(255, 255, 255)"
                 stroke-width="3" stroke="rgb(220, 220, 220)"/>
-       <!-- Blätter  -->
+       <!-- HS-Logo -->
+       <rect x="295" y="490" width="10" height="5" fill="rgb(111, 41, 159)" />
+       <rect x="295" y="485" width="10" height="5" fill="rgb(54, 45, 159)" />
+       <rect x="295" y="480" width="10" height="5" fill="rgb(54, 45, 159)" />
+       <rect x="295" y="475" width="10" height="5" fill="rgb(54, 45, 159)" />
+       <rect x="295" y="470" width="10" height="5" fill="rgb(111, 41, 159)" />
+       <rect x="295" y="465" width="10" height="5" fill="rgb(219, 95, 99)" />
+       <rect x="295" y="460" width="10" height="5" fill="rgb(255, 89, 0)" />
+       <rect x="295" y="455" width="10" height="5" fill="rgb(223, 0, 0)" />
+       <rect x="295" y="450" width="10" height="5" fill="rgb(219, 95, 99)" />
+       <rect x="295" y="445" width="10" height="5" fill="rgb(140, 204, 255)" />
+
+       <!-- Blatt1  -->
        <polygon points="300 212, 75 212, 275 242, 275 224, 300 224, z"
                 fill="rgb(255, 255, 255)"
                 stroke-width="3" stroke="rgb(220, 220, 220)"/>
+       <!-- Streifen1 -->
+       <polygon points="100 212,90 212, 90 214, 100 215, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+       <polygon points="115 212,105 212, 105 216, 115 218, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+       <polygon points="130 212,120 212, 120 219, 130 220, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+
+       <!-- Blatt2 -->
+       <polygon points="288 231, 401 426, 327 238, 311 247, 299 225, z"
+                fill="rgb(255, 255, 255)"
+                stroke-width="3" stroke="rgb(220, 220, 220)"/>
+       <!-- Streifen2 -->
+       <polygon points="388 404,393 413, 395 412, 391 403, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+       <polygon points="381 391,386 400, 389 398, 386 388, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+       <polygon points="373 378,378 387, 384 383, 380 374, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+
+       <!-- Blatt3 -->
+       <polygon points="311 232, 423 37, 297 195, 313 204, 300 225, z"
+                fill="rgb(255, 255, 255)"
+                stroke-width="3" stroke="rgb(220, 220, 220)"/>
+       <!-- Streifen3 -->
+       <polygon points="411 59, 416 50, 414 49, 408 57, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+       <polygon points="403 71, 408 63, 405 61, 398 69, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+       <polygon points="396 85, 401 76, 394 73, 389 81, z"
+                fill="rgb(255, 0, 0)"
+                stroke-width="1" stroke="rgb(220, 220, 220)"/>
+
        <!-- Rotorenhalterung  -->
        <circle cx="300" cy="225" r="15" stroke="rgb(220, 220, 220)" fill="rgb(255, 255, 255)" stroke-width="3"/>
        <circle cx="300" cy="225" r="7.5" stroke="rgb(220, 220, 220)" fill="rgb(255, 255, 255)" stroke-width="1"/>
 
    </svg>
+
+   <div>
+       <label>x
+           <input id="x" type="text">
+       </label>
+       <label>y
+           <input id="y" type="text">
+       </label>
+       <button id="calc">Calc</button>
+       <label>Ergebnis:
+           <span id="ergebnis"></span>
+       </label>
+   </div>
+<script>
+
+    window.addEventListener("load", function () {
+
+        let resultLabel = document.getElementById("ergebnis");
+
+        let button = document.getElementById("calc");
+
+        button.addEventListener("click", function () {
+
+            let x = document.getElementById("x").value;
+            let y = document.getElementById("y").value;
+
+            let ergebnis = calc(x, y);
+
+            resultLabel.innerText = "x' = " + ergebnis[0] + " y' = " + ergebnis[1];
+
+        });
+
+    });
+
+    function calc(x, y) {
+        let xNew, yNew, array = [];
+
+        x = x - 300;
+        y = y - 225;
+
+        console.log( x + " " + y);
+
+        xNew = Math.floor(x * Math.cos(rad(120)) + (y * Math.sin(rad(120))));
+        yNew = Math.floor(-(x) * Math.sin(rad(120)) + (y * Math.cos(rad(120))));
+
+        console.log( xNew + " " + yNew);
+
+        array[0] = xNew + 300;
+        array[1] = yNew + 225;
+
+        return array;
+    }
+
+    function rad (degree) {
+        return degree * (Math.PI / 180);
+    }
+
+</script>
 </body>
 </html>
