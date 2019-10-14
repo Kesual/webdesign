@@ -84,9 +84,10 @@ table tr:nth-child(odd) {
     color: red;
 }
 
-/* Manipulation des letzten p-Elements */
-p:only-of-type {
-
+div
+ {
+    border-top: 1px solid black;
+   margin-top: 10px;
 }
 
 div
@@ -94,5 +95,11 @@ div
     text-align: right;
     font-family: "Lucida Console", Courier, monospace;
     font-size: 10px;
+}
+
+div
+:first-child > a {
+    background-color: black;
+    color: white;
 }
 
