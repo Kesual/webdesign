@@ -12,7 +12,18 @@ h1, h2 {
     color: rgb(51, 153, 255)
 }
 
+h2 + p {
+    background-color: cadetblue;
+    font-style: italic;
+}
 
+h2 + p::first-letter{
+    font-size: 30px;
+}
+
+a[href^="http://"]{
+    color: red;
+}
 
 table, tbody {
     border: 2px solid red;
@@ -20,4 +31,9 @@ table, tbody {
 
 table, tr {
     border: 1px solid red;
+}
+
+/* Manipulation des letzten p-Elements */
+p:only-of-type {
+    background-color: blue;
 }
