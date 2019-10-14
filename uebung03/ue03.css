@@ -1,6 +1,6 @@
 
 body {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -9,7 +9,7 @@ h1 {
 }
 
 h1, h2 {
-    color: rgb(51, 153, 255)
+    color: rgb(51, 153, 255);
 }
 
 h2 + p {
@@ -25,15 +25,74 @@ a[href^="http://"]{
     color: red;
 }
 
-table, tbody {
-    border: 2px solid red;
+a[href*="google"]{
+    text-decoration: none;
+    font-weight: bold;
 }
 
-table, tr {
-    border: 1px solid red;
+a[href*="kuba"]{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p + p + p {
+    background-color: gray;
+    font-size: 12px;
+    color: white;
+}
+
+p + p + p::before {
+    content: "HINWEIS: ";
+}
+
+ul {
+    border-left: 5px solid blue;
+}
+
+.wichtig {
+    border-right: 5px solid red;
+}
+
+table {
+    border: 2px solid palevioletred;
+}
+
+tr {
+    border: 1px solid palevioletred;
+}
+
+caption {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+  }
+
+th {
+    background-color: blueviolet;
+    color: black;
+}
+
+table tr:nth-child(even) {
+    background-color: aquamarine;
+    color: white;
+}
+
+table tr:nth-child(odd) {
+    color: red;
 }
 
 /* Manipulation des letzten p-Elements */
 p:only-of-type {
-    background-color: blue;
+
 }
+
+div
+:first-child {
+    text-align: right;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 10px;
+}
+
