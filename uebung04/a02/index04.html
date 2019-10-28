@@ -10,7 +10,14 @@
         }
 
         div {
-            border: 10px solid rebeccapurple;
+            position: relative;
+        }
+
+        .main {
+            border: 5px solid rebeccapurple;
+            background-color: white;
+            padding: 10px;
+            width: fit-content;
         }
 
         img {
@@ -19,33 +26,70 @@
 
         p {
             background-color: grey;
+            text-align: center;
+            font-family: "Comic Sans MS",serif;
+            font-size: 20px;
+            margin: 0;
+            margin-bottom: -10px;
         }
+
+        #eins{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #zwei{
+            position: absolute;
+            top: 0;
+            left: 230px;
+        }
+
+        #drei{
+            position: absolute;
+            top: 300px;
+        }
+
+        #vier{
+            position: fixed;
+            top: 300px;
+            left: 230px;
+        }
+
+        #fünf{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
     </style>
 </head>
 <body>
-    <div>
+<div>
+    <div id="eins" class="main">
         <img src="images/Pferd.png">
         <p>Pferd</p>
     </div>
 
-    <div>
+    <div id="zwei" class="main">
         <img src="images/Pinguin.png">
         <p>Pinguin</p>
     </div>
 
-    <div>
+    <div  id="drei" class="main">
         <img src="images/Frosch.png">
         <p>Frosch</p>
     </div>
 
-    <div>
+    <div  id="vier" class="main">
         <img src="images/Maus.png">
         <p>Maus</p>
     </div>
 
-    <div>
+    <div  id="fünf" class="main">
         <img src="images/Giraffe.png">
         <p>Giraffe</p>
     </div>
+</div>
 </body>
 </html>
