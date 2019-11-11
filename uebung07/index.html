@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="charset=utf-8">
+    <title>webdesign, übung07</title>
+    
+    <style>
+        .playground {
+            margin: auto;
+        }
+
+        .mann {
+            font-size: 100px;
+            border-block-end: 5px solid purple;
+            margin: 50px 867px;
+            animation-name: hampel;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes hampel {
+            0% { left: 20px; top: 20px; opacity: 1.0; }
+10% { left: 0px; top: 20px; }
+15% { left: 20px; top: 0px; }
+40% { left: 40px; top: 20px; }
+65% { left: 20px; top: 40px; opacity: 0.1; }
+90% { left: 20px; top: 20px; }
+100% { left: 20px; top: 20px; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="playground">
+    <pre class="mann">
+ o
+/0\
+/ \</pre>
+</div>
+	
+</body>
+
+</html>
